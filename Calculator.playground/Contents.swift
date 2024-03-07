@@ -2,7 +2,7 @@ class Calculator {
     var operation: AbstractOperation
     
     init(operation: AbstractOperation) {
-        self.operation = addOperation
+        self.operation = operation
     }
     
     func changeOperation(operation: AbstractOperation) {
@@ -65,7 +65,8 @@ calculator.changeOperation(operation: multiplyOperation)
 let multiplyResult = calculator.calculate(firstNum: 10, secondNum: 5)
 
 calculator.changeOperation(operation: divideOperation)
-let divideResult = calculator.calculate(firstNum: 10, secondNum: 5)
+let firstNum = 10, secondNum = 5
+let divideResult = secondNum == 0 ? 0.0 : calculator.calculate(firstNum: firstNum, secondNum: secondNum)
 
 calculator.changeOperation(operation: remainderOperation)
 let remainderResult = calculator.calculate(firstNum: 10, secondNum: 5)
